@@ -23,7 +23,11 @@ if(!empty($usuarioLogado) && $rota == 'login'){
 //array de rotas
 $rotas = [
     'login' => 'Views\login.php',
-    'home' => 'Views\home.php'
+    'home' => 'Views\home.php',
+    'cadastrarMedico' => 'Views\cadastrarM.php',
+    'marcarConsulta' => 'Views\marcarC.php',
+    'listarMedicos' => 'Views\listarM.php',
+    'listarConsultas' => 'Views\listarC.php'
 ];
 
 if(!key_exists($rota, $rotas)){ //verificando se a rota existe no array de rotas
