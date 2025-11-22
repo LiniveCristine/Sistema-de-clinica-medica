@@ -1,7 +1,6 @@
 <?php
 
-function deletarMedico($nome, $listaMedicos){
-    $medicoExcluir = array_key_first($nome);
+function deletarMedico($medicoExcluir, $listaMedicos){
     
     foreach($listaMedicos as $key => $medico){
         if($medicoExcluir == key($medico)){

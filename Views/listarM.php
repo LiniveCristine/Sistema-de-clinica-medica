@@ -4,15 +4,11 @@ defined('CONTROL') or die("acesso negado");
 $listaMedicos = PegarListaMedicosJson();
 
 
-if($_SERVER['REQUEST_METHOD'] == 'POST'){
-    foreach($_POST as $key => $nomeMedico){
-        if($key == 'deletar'){
-            deletarMedico($nomeMedico, $listaMedicos);
-        }elseif($key == 'editar'){
-           editarMedico($nomeMedico, $listaMedicos);
-        }
-    }
- 
+if($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST)){
+
+    //pegando a primeira key do array  POST (nome do médico), retirando o _ e atribuindo o vlor para variavel
+    $nomeMedico = str_replace("_", " ", key($_POST)) ;
+    deletarMedico($nomeMedico, $listaMedicos);  
 }
 
 ?>
@@ -36,11 +32,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             <?php foreach($medico as $nome => $especialidade):?>
                 <div>
                     <p><?= "Nome: $nome - Especialidade: $especialidade"?></p>
-                    <input type="checkbox" name="deletar[<?=$nome?>]"> 
+                    <input type="checkbox" name="<?=$nome?>"> 
                     <button type="submit"><i class="fa-regular fa-trash-can"></i></button>
-
-                    <input type="checkbox" name="editar[<?=$nome?>]"> 
-                    <button type="submit"><i class="fa-regular fa-pen-to-square"></i></button>
                 </div>
             <?php endforeach; ?>
         <?php endforeach; ?>

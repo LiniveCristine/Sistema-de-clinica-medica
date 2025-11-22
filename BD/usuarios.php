@@ -3,7 +3,7 @@
 return [
     [
         'usuario' => 'teste',
-        'senha' => password_hash("12345", PASSWORD_DEFAULT)
+        'senha' => password_hash("12345x", PASSWORD_DEFAULT)
     ],
     [
        'usuario' =>  'teste2',

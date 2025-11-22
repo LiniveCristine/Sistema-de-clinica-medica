@@ -18,7 +18,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         <?php require_once 'navbar.php' ?>
     </header>
     <main>
-        <form action="index.php?rota=cadastrarMedico" method="post">
+        <form action="?rota=cadastrarMedico" method="post">
             <input type="text" name="nome" placeholder="nome">
             <input type="text" name="especialidade" placeholder="especialidade">
             <button type="submit">cadastrar</button>
