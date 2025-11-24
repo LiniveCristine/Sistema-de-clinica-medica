@@ -12,10 +12,10 @@ function MarcarConsulta(){
     }
 
     $novaConsulta = [
-        'Nome Paciente' => $nomepaciente,
-        'Data Nascimento' => $dataNascimento,
-        'Data Consulta' => $dataConsulta,
-        'Nome Medico' => $medico,
+        'Nome paciente' => $nomepaciente,
+        'Data nascimento' => $dataNascimento,
+        'Data consulta' => $dataConsulta,
+        'Nome medico' => $medico,
         'Confirmada' => false
     ];
 

@@ -1,7 +1,16 @@
 <?php
     $listaConsultas =  PegarListaJson('BD\listaConsultas.json');
 
+    if($_SERVER['REQUEST_METHOD'] == 'POST' && count($_POST) >= 2){
 
+        $consultaSelecionada = key($_POST);
+    
+        if(array_key_last($_POST) == 'deletar' ){
+            DeletarConsulta($consultaSelecionada, $listaConsultas);
+        } else{
+            ConfirmarConsulta($consultaSelecionada, $listaConsultas);
+        }
+    }
 ?>
 
 <!DOCTYPE html>
@@ -19,17 +28,20 @@
     <main>
         <h2><?= empty($listaConsultas)? 'Não há consultas marcadas' : ' '?></h2>
         <form action="?rota=listarConsultas" method="post">
-            <?php foreach($listaConsultas as $consulta):?>
-                <input type="checkbox" name="<?=$nome?>">  
+            <?php foreach($listaConsultas as $key => $consulta):?>
+                <input type="checkbox" name=<?= $key ?>>  
             <?php foreach($consulta as $key => $value):?>
                 <div>
+                    <?php if($key == 'Confirmada' && $value == false): ?>
+                        <?php continue ?>
+                    <?php endif; ?>
                     <p><?= "$key - $value"?></p> 
                 </div>
             <?php endforeach; ?>
         <?php endforeach; ?>
         <?php if (!empty($listaConsultas)): ?>
-            <button type="submit"><i class="fa-regular fa-trash-can"></i></button>
-            <button type="submit">confirmar</button>
+            <button type="submit" name="editar"><i class="fa-regular fa-circle-check"></i></button>
+            <button type="submit" name= "deletar"><i class="fa-regular fa-trash-can"></i></button>
         <?php endif ?>
         </form>
         
