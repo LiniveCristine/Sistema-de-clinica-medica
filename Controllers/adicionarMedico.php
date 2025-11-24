@@ -14,7 +14,7 @@ function cadastrarMedico(){
     ];
 
     //pegando o retorno da leitura do json
-    $listaMedicos = PegarListaMedicosJson();
+    $listaMedicos = PegarListaJson('BD\listaMedicos.json');
     $listaMedicos[] = $novoMedico;
 
     //Criando texto json
