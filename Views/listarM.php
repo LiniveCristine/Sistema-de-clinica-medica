@@ -3,7 +3,6 @@ defined('CONTROL') or die("acesso negado");
 
 $listaMedicos = PegarListaMedicosJson();
 
-
 if($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST)){
 
     //pegando a primeira key do array  POST (nome do médico), retirando o _ e atribuindo o vlor para variavel
@@ -27,16 +26,18 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST)){
     </header>
     <main>
         <h2><?= empty($listaMedicos)? 'Não há medicos cadastrados' : ' '?></h2>
-        <form action="index.php?rota=listarMedicos" method="post">
+        <form action="?rota=listarMedicos" method="post">
             <?php foreach($listaMedicos as $medico):?>
             <?php foreach($medico as $nome => $especialidade):?>
                 <div>
                     <p><?= "Nome: $nome - Especialidade: $especialidade"?></p>
-                    <input type="checkbox" name="<?=$nome?>"> 
-                    <button type="submit"><i class="fa-regular fa-trash-can"></i></button>
+                    <input type="checkbox" name="<?=$nome?>">   
                 </div>
             <?php endforeach; ?>
         <?php endforeach; ?>
+        <?php if (!empty($listaMedicos)): ?>
+            <button type="submit"><i class="fa-regular fa-trash-can"></i></button>
+        <?php endif ?>
         </form>
     </main>
     

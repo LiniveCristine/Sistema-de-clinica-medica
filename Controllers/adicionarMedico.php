@@ -1,7 +1,7 @@
 <?php
 
 function cadastrarMedico(){
-    $nome = strip_tags($_POST['nome']) ?? 'oi';
+    $nome = strip_tags($_POST['nome']) ?? null;
     $especialidade = strip_tags($_POST['especialidade']) ?? 'null';
 
     if(empty($nome) || empty($especialidade)){

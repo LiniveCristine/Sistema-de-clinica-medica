@@ -4,7 +4,7 @@ defined('CONTROL') or die("acesso negado");
 $listaMedicos = PegarListaMedicosJson();
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
-    var_dump($_POST);
+    $mensagem = MarcarConsulta();
 }
 
 ?>
@@ -32,18 +32,11 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             <input type="date" name="dataConsulta" placeholder="data consulta">
 
             <h3>Medicos: </h3>
-            
-            <?php foreach($listaMedicos as $medico):?>
-            <?php foreach($medico as $nomeMedico => $especialidade):?>
-                <div>
-                    <input type="checkbox" name="<?='Dr ' . $nomeMedico?>"> 
-                    <p><?= "Dr(a) $nomeMedico - Especialidade: $especialidade"?></p>
-                </div>
-            <?php endforeach; ?>
-        <?php endforeach; ?>
-            
+            <?php require_once 'checkboxMedicos.php' ?>
         <button type="submit">Marcar</button>
         </form>
+
+        <p><?= $mensagem ?></p>
     </main>
 </body>
 </html>
