@@ -1,4 +1,4 @@
-<?php $listaMedicos = PegarListaMedicosJson();?>
+<?php $listaMedicos =  PegarListaJson('BD\listaMedicos.json');?>
 
 <h2><?= empty($listaMedicos)? 'Não há medicos cadastrados' : ' ';?></h2>
 

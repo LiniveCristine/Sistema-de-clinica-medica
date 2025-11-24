@@ -1,7 +1,7 @@
 <?php
 defined('CONTROL') or die("acesso negado");
 
-$listaMedicos = PegarListaMedicosJson();
+$listaMedicos = PegarListaJson('BD\listaMedicos.json');
 
 if($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST)){
 

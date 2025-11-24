@@ -12,13 +12,14 @@ function MarcarConsulta(){
     }
 
     $novaConsulta = [
-        'nomePaciente' => $nomepaciente,
-        'dataNascimento' => $dataNascimento,
-        'dataConsulta' => $dataConsulta,
-        'nomeMedico' => $medico 
+        'Nome Paciente' => $nomepaciente,
+        'Data Nascimento' => $dataNascimento,
+        'Data Consulta' => $dataConsulta,
+        'Nome Medico' => $medico,
+        'Confirmada' => false
     ];
 
-    $listaConsultas = PegarListaConsultas();
+    $listaConsultas =  PegarListaJson('BD\listaConsultas.json');
     $listaConsultas[] = $novaConsulta;
 
     $textoJson = json_encode($listaConsultas, JSON_PRETTY_PRINT);

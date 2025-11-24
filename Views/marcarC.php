@@ -1,7 +1,7 @@
 <?php
 defined('CONTROL') or die("acesso negado");
 
-$listaMedicos = PegarListaMedicosJson();
+$listaMedicos = PegarListaJson('BD\listaConsultas.json');
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $mensagem = MarcarConsulta();
@@ -36,7 +36,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         <button type="submit">Marcar</button>
         </form>
 
-        <p><?= $mensagem ?></p>
+        <p><?= $mensagem?? null ?></p>
     </main>
 </body>
 </html>
