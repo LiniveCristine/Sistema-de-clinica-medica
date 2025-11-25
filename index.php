@@ -27,7 +27,8 @@ $rotas = [
     'cadastrarMedico' => 'Views\cadastrarM.php',
     'marcarConsulta' => 'Views\marcarC.php',
     'listarMedicos' => 'Views\listarM.php',
-    'listarConsultas' => 'Views\listarC.php'
+    'listarConsultas' => 'Views\listarC.php',
+    'logout' => 'Views\logout.php'
 ];
 
 if(!key_exists($rota, $rotas)){ //verificando se a rota existe no array de rotas

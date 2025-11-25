@@ -19,30 +19,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" href="Views/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <title>listar consulta</title>
 </head>
 <body>
-    <head>
+    <header>
         <?php require_once 'navbar.php' ?>
-    </head>
+    </header>
     <main>
-        <h2><?= empty($listaConsultas)? 'Não há consultas marcadas' : ' '?></h2>
-        <form action="?rota=listarConsultas" method="post">
+        <form action="?rota=listarConsultas" method="post" class="container consulta">
+            <h2><?= empty($listaConsultas)? 'Não há consultas marcadas' : ' '?></h2>
             <?php foreach($listaConsultas as $key => $consulta):?>
-                <input type="checkbox" name=<?= $key ?>>  
-            <?php foreach($consulta as $key => $value):?>
-                <div>
-                    <?php if($key == 'Confirmada' && $value == false): ?>
-                        <?php continue ?>
-                    <?php endif; ?>
-                    <p><?= "$key - $value"?></p> 
+                <div class="container menor">
+                        <input type="checkbox" name=<?= $key ?>>  
+                        <?php foreach($consulta as $key => $value):?>
+                            <?php if($key == 'Confirmada' && $value == false || $key == 'Data nascimento'): ?>
+                                <?php continue ?>
+                            <?php endif; ?>
+                            <p><?= "$key - $value"?></p> 
+                    <?php endforeach; ?>
                 </div>
             <?php endforeach; ?>
-        <?php endforeach; ?>
-        <?php if (!empty($listaConsultas)): ?>
-            <button type="submit" name="editar"><i class="fa-regular fa-circle-check"></i></button>
-            <button type="submit" name= "deletar"><i class="fa-regular fa-trash-can"></i></button>
-        <?php endif ?>
+            <?php if (!empty($listaConsultas)): ?>
+                <button type="submit" name="editar"><i class="fa-regular fa-circle-check"></i></button>
+                <button type="submit" name= "deletar" class="lixo"><i class="fa-regular fa-trash-can" ></i></button>
+            <?php endif ?>
         </form>
         
     </main>

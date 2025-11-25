@@ -10,5 +10,6 @@ defined('CONTROL') or die("acesso negado");
     <a href="?rota=listarMedicos">Listar Médicos</a>
     <a href="?rota=marcarConsulta">Marcar consulta</a>
     <a href="?rota=listarConsultas">Listar Consultas</a>
+    <a href="?rota=logout">Sair</a>
 
 </nav>

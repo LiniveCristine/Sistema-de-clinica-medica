@@ -127,11 +127,19 @@ h1 {
 
 .lixo i {
   font-size: 1.2rem;
-  color: #ccc;
+  color: white;
 }
 
 /*CONSULTA*/
 
 .consulta {
+  gap: 5px;
+}
+
+/*LISTAR CONSULTA*/
+
+.menor {
+  width: 300px;
+  align-self: center;
   gap: 5px;
 }

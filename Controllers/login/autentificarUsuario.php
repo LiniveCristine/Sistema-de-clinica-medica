@@ -14,7 +14,7 @@
     foreach($usuarios as $usuarioBD){
         if($usuario == $usuarioBD['usuario'] && password_verify($senha, $usuarioBD['senha'])){
             $_SESSION['usuario'] = $usuario;
-            header('location: index.php/?rota=home');
+            header('location: ?rota=home');
         }
     }
     return "Usuario ou senha INVALIDOS";
