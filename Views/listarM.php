@@ -17,7 +17,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST)){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../Views/style.css">
+     <link rel="stylesheet" href="../Views/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <title>Listar Médicos</title>
 </head>
@@ -28,7 +28,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST)){
     <main>
         
         <form action="?rota=listarMedicos" method="post" class="container">
-            <h2><?= empty($listaMedicos)? 'Não há medicos cadastrados' : ' '?></h2>
+            <h2><?= empty($listaMedicos)? 'Não há medicos cadastrados' : 'Médicos Cadastrados'?></h2>
             <?php foreach($listaMedicos as $medico):?>
             <?php foreach($medico as $nome => $especialidade):?>
                 <div class="medico">

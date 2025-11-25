@@ -63,7 +63,9 @@ main {
   gap: 15px;
 }
 
-form input[type="text"] {
+form input[type="text"],
+input[type="password"],
+input[type="date"] {
   padding: 12px;
   border: 1px solid #ccc;
   border-radius: 6px;
@@ -102,7 +104,9 @@ form button:hover {
   align-items: center;
 }
 
-.container h2 {
+.container h3,
+h2,
+h1 {
   text-align: center;
   margin-bottom: 20px;
   font-weight: 500;
@@ -124,4 +128,10 @@ form button:hover {
 .lixo i {
   font-size: 1.2rem;
   color: #ccc;
+}
+
+/*CONSULTA*/
+
+.consulta {
+  gap: 5px;
 }

@@ -14,20 +14,24 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="Views/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <title>login</title>
 </head>
 <body>
-    <header>
-        <h1>Login</h1>
-        <form action="index.php?rota=login" method="post">
+    <main>
+
+        <form action="index.php?rota=login" method="post" class="container">
+            <h1>Login</h1>
             <input type="text" name="usuario" placeholder="usuario">
             <input type="password" name="senha" placeholder="senha">
             <button type="submit">entrar</button>
+            <?php if(!empty($erro)): ?>
+                <p class="alerta"> <?= $erro ?> </p> 
+            <?php endif; ?>
         </form>
 
-        <?php if(!empty($erro)): ?>
-        <p> <?= $erro ?> </p> 
-        <?php endif; ?>
-    </header>
+        
+    </main>
 </body>
 </html>

@@ -22,6 +22,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     </header>
     <main>
         <form action="?rota=cadastrarMedico" method="post" class="container">
+            <h2>Cadastrar Médico</h2>
             <input type="text" name="nome" placeholder="nome">
             <input type="text" name="especialidade" placeholder="especialidade">
             <button type="submit">cadastrar</button>

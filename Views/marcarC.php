@@ -14,7 +14,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../Views/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <title>marcar consulta</title>
 </head>
 <body>
@@ -22,22 +23,24 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         <?php require_once 'navbar.php' ?>
     </header>
     <main>
-        <form action="?rota=marcarConsulta" method="post">
-            <label for="nomePaciente">Nome</label>
+        <form action="?rota=marcarConsulta" method="post" class="container consulta" >
+            <label for="nomePaciente">Nome:</label>
             <input type="text" name="nomePaciente" placeholder="nome paciente">
 
-            <label for="dataNascimento">Data nascimento</label>
+            <label for="dataNascimento">Data nascimento:</label>
             <input type="date" name="dataNascimento" placeholder="data nascimento">
 
-            <label for="dataConsulta">Data Consulta</label>
+            <label for="dataConsulta">Data Consulta:</label>
             <input type="date" name="dataConsulta" placeholder="data consulta">
 
-            <h3>Medicos: </h3>
+            <p>Medicos: </p>
             <?php require_once 'checkboxMedicos.php' ?>
-        <button type="submit">Marcar</button>
+
+            <button type="submit">Marcar</button>
+            <p class="alerta"><?= $mensagem?? null ?></p>
         </form>
 
-        <p><?= $mensagem?? null ?></p>
+        
     </main>
 </body>
 </html>

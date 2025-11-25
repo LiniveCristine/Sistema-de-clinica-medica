@@ -1,12 +1,11 @@
 <?php $listaMedicos =  PegarListaJson('BD\listaMedicos.json');?>
 
-<h2><?= empty($listaMedicos)? 'Não há medicos cadastrados' : ' ';?></h2>
+<p><?= empty($listaMedicos)? 'Não há medicos cadastrados' : ' ';?></p>
 
 <?php foreach($listaMedicos as $medico):?>
             <?php foreach($medico as $nomeMedico => $especialidade):?>
                 <div>
-                    <p><?= "Dr(a): $nomeMedico - Especialidade: $especialidade"?></p>
-                    <input type="checkbox" name="<?=$nomeMedico?>"> 
+                    <p><input type="checkbox" name="<?=$nomeMedico?>"> <?= "Dr(a): $nomeMedico - $especialidade"?></p>
                 </div>
             <?php endforeach; ?>
              
