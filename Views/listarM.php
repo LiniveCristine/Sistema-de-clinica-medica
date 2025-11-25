@@ -17,7 +17,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST)){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" href="../Views/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <title>Listar Médicos</title>
 </head>
 <body>
@@ -25,18 +26,18 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST)){
         <?php require_once 'navbar.php' ?>
     </header>
     <main>
-        <h2><?= empty($listaMedicos)? 'Não há medicos cadastrados' : ' '?></h2>
-        <form action="?rota=listarMedicos" method="post">
+        
+        <form action="?rota=listarMedicos" method="post" class="container">
+            <h2><?= empty($listaMedicos)? 'Não há medicos cadastrados' : ' '?></h2>
             <?php foreach($listaMedicos as $medico):?>
             <?php foreach($medico as $nome => $especialidade):?>
-                <div>
-                    <p><?= "Nome: $nome - Especialidade: $especialidade"?></p>
-                    <input type="checkbox" name="<?=$nome?>">   
+                <div class="medico">
+                    <p>  <input type="checkbox" name="<?=$nome?>" class="checkbox"> <?= "Nome: $nome - $especialidade"?></p>  
                 </div>
             <?php endforeach; ?>
         <?php endforeach; ?>
         <?php if (!empty($listaMedicos)): ?>
-            <button type="submit"><i class="fa-regular fa-trash-can"></i></button>
+            <button type="submit" class="lixo" >Deletar</i></button>
         <?php endif ?>
         </form>
     </main>

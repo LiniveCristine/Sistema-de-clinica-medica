@@ -2,7 +2,8 @@
 defined('CONTROL') or die("acesso negado");
 ?>
 
-<nav>
+<nav class="nav" >
+
     <p>Usuario: <?=  $_SESSION['usuario'] ?></p>
     <a href="?rota=home">Home</a>
     <a href="?rota=cadastrarMedico">Cadastrar Medico</a>
