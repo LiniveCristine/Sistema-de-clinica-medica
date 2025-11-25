@@ -1,7 +1,7 @@
 # Sistema de Clínica Médica 🏥
 
 ## Descrição
-Projeto proposto na materia de programação I, originalmente feito na linguagem C. Decidi refazer em PHP para treinar os fundamentos da linguagem e entender melhor o fluxo de roteamento, junto com conceitos da web. Como ainda não inicie os estudos de banco de dados, as informações são salvas em um aquivo JSON.
+Projeto proposto na materia de programação I, originalmente feito na linguagem C. Decidi refazer em PHP para treinar os fundamentos da linguagem e entender melhor o fluxo de roteamento, junto com conceitos da web. Como ainda não inicie os estudos de banco de dados, as informações são salvas em um arquivo JSON.
 
 ## Funcionalidades
 - Login com validação
