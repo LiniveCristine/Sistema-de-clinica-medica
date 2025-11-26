@@ -1,6 +1,4 @@
-/* ================================
-   Configurações gerais
-================================ */
+/*GERAL*/
 * {
   margin: 0;
   padding: 0;
@@ -13,18 +11,15 @@ body {
   color: #333;
 }
 
-/* ================================
-   Header / Navbar
-================================ */
 header {
   width: 100%;
   background: #ffffff;
   border-bottom: 1px solid #e0e0e0;
-  padding: 15px 0;
+  padding: 20px 0;
   margin-bottom: 40px;
 }
 
-/* Caso a navbar tenha links */
+/* NAV BAR */
 .nav {
   color: #444;
   font-weight: 500;
@@ -41,9 +36,7 @@ header {
   padding-left: 20px;
 }
 
-/* ================================
-   Main / Formulário
-================================ */
+/*CONTAINER E FORMULÁRIOS*/
 main {
   align-items: center;
   min-height: 70vh;
@@ -57,7 +50,7 @@ main {
   padding: 30px 40px;
   width: 420px;
   border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -80,10 +73,10 @@ input[type="date"] {
   font-weight: 500;
 }
 
-/* Botão */
+/* BOTÕES */
 form button {
   padding: 12px;
-  background: #2a8cbf; /* azul leve, neutro e profissional */
+  background: #2a8cbf;
   border: none;
   color: #fff;
   font-size: 1rem;
@@ -94,13 +87,13 @@ form button {
 }
 
 form button:hover {
-  background: #226f97;
+  background: #71ad95;
 }
 
 /*LISTAR MEDICOS*/
 
 .container .medico {
-  justify-content: space-between; /* texto de um lado, checkbox do outro */
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -112,6 +105,7 @@ h1 {
   font-weight: 500;
 }
 
+/*BOTÃO DE EXCLIOR*/
 .lixo {
   width: 100%;
   margin-top: 25px;
